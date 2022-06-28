@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { motion } from "framer-motion";
 
 import { FaUserCircle } from "react-icons/fa";
@@ -11,9 +11,10 @@ import {
   LiVariantDiffColor,
   FullLiVariant,
 } from "./animations/SpringHover";
+import { NavContext } from "./context/NavState";
 
 const NavBar = () => {
-  const [show, setShow] = useState(false);
+  const [show,setShow]=useContext(NavContext)
   const showHam = () => {
     setShow(!show);
   };
@@ -21,7 +22,7 @@ const NavBar = () => {
     <div id="nav-container" className="w-full h-[80px]">
       <div
         id="nav-wrapper"
-        className="flex justify-between mx-auto items-center h-full bg-[#4cb9b2]"
+        className="flex justify-between mx-auto items-center h-full bg-[#f87e9c]"
       >
         {/* left-side */}
         <div className="mx-5 p-2">
