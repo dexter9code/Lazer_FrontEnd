@@ -19,7 +19,7 @@ export const FullLiVariant = {
   hover: {
     y: "-5px",
     x: "1px",
-    color: "red",
+    color: "#005A9C",
     transition: { duration: 2, type: "spring", stiffness: 150, mass: 1.5 },
   },
 };
