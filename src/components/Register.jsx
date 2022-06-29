@@ -47,7 +47,7 @@ const Register = () => {
                 <p className="text-center">test</p>
               )}
               {console.log(serverError)}
-              <div>
+              <div className="border-2 rounded-sm border-blue-800 bg-slate-800 ">
                 <Form>
                   <FormField name={"name"} title={"Name"} />
                   <FormField name={"email"} title={"Email"} />
