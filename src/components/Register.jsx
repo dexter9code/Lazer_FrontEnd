@@ -20,6 +20,7 @@ const Register = () => {
     console.log(serverError);
     console.log(res.data);
     localStorage.setItem("token", res.headers["x-auth-token"]);
+    window.location='/'
   };
   return (
     <div className="md:flex align-middle lg:flex justify-evenly">

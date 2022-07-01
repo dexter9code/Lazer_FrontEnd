@@ -12,6 +12,7 @@ const Login = () => {
     const res = await apiUrl.post("/auth", userData);
     localStorage.setItem("token", res.data);
     console.log(res.data);
+    window.location='/'
   };
   return (
     <div className="w-full h-[90vh] overflow-hidden">

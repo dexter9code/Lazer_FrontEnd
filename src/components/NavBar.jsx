@@ -1,5 +1,6 @@
 import React, { useState,useContext } from "react";
 import { motion } from "framer-motion";
+import {Link} from 'react-router-dom'
 
 import { FaUserCircle } from "react-icons/fa";
 import { FcAbout } from "react-icons/fc";
@@ -13,7 +14,7 @@ import {
 } from "./animations/SpringHover";
 import { NavContext } from "./context/NavState";
 
-const NavBar = () => {
+const NavBar = ({user}) => {
   const [show,setShow]=useContext(NavContext)
   const showHam = () => {
     setShow(!show);
@@ -31,26 +32,18 @@ const NavBar = () => {
 
         {/* Right-Side */}
 
-        <div className="p-3">
+        <div className="p-3 ">
           <ul className="hidden md:flex justify-center align-middle">
-            <div className="flex justify-center items-center p-3">
+            {user && (
+              <>
+              <div className="flex justify-center items-center p-3">
               <FaUserCircle size={25} className="mx-2" />
               <motion.li
                 variants={FullLiVariant}
                 whileHover="hover"
-                className="px-2 font-bold text-lg cursor-pointer "
+                className="px-2 font-bold capitalize text-lg cursor-pointer "
               >
-                Login
-              </motion.li>
-            </div>
-            <div className="flex justify-center items-center p-3">
-              <AiFillHome size={20} className="mx-2" />
-              <motion.li
-                variants={FullLiVariant}
-                whileHover="hover"
-                className="px-2 font-bold text-lg"
-              >
-                Home
+                <Link to={'/'}>{user.name}</Link>
               </motion.li>
             </div>
             <div className="flex justify-center items-center p-3">
@@ -60,7 +53,17 @@ const NavBar = () => {
                 whileHover="hover"
                 className="px-2 font-bold text-lg"
               >
-                Products
+                <Link to={'/lazer/products'}>Products</Link>
+              </motion.li>
+            </div>
+            <div className="flex justify-center items-center p-3">
+              <AiFillHome size={20} className="mx-2" />
+              <motion.li
+                variants={FullLiVariant}
+                whileHover="hover"
+                className="px-2 font-bold text-lg"
+              >
+                <Link to={'/'}>Home</Link>
               </motion.li>
             </div>
             <div className="flex justify-center items-center p-3">
@@ -70,9 +73,59 @@ const NavBar = () => {
                 whileHover="hover"
                 className="px-2 font-bold text-lg"
               >
-                About
+                <Link to={'/'}>Logout</Link>
               </motion.li>
             </div>
+              </>
+            )}
+
+            {!user && (
+              <>
+              <div className="flex justify-center items-center p-3">
+              <FaUserCircle size={25} className="mx-2" />
+              <motion.li
+                variants={FullLiVariant}
+                whileHover="hover"
+                className="px-2 font-bold text-lg cursor-pointer "
+              >
+                <Link to={'/lazer/login'}>Login</Link>
+              </motion.li>
+            </div>
+            <div className="flex justify-center items-center p-3">
+              <FcAbout size={20} className="mx-2" />
+              <motion.li
+                variants={FullLiVariant}
+                whileHover="hover"
+                className="px-2 font-bold text-lg"
+              >
+                <Link to={'/lazer/register'}>Register</Link>
+              </motion.li>
+            </div>
+            <div className="flex justify-center items-center p-3">
+              <GiLargeDress size={20} className="mx-2" />
+              <motion.li
+                variants={FullLiVariant}
+                whileHover="hover"
+                className="px-2 font-bold text-lg"
+              >
+                <Link to={'/lazer/products'}>Products</Link>
+              </motion.li>
+            </div>
+            <div className="flex justify-center items-center p-3">
+              <AiFillHome size={20} className="mx-2" />
+              <motion.li
+                variants={FullLiVariant}
+                whileHover="hover"
+                className="px-2 font-bold text-lg"
+              >
+                <Link to={'/'}>Home</Link>
+              </motion.li>
+            </div>
+
+              </>
+            )}
+            
+           
           </ul>
         </div>
 
