@@ -73,7 +73,7 @@ const NavBar = ({user}) => {
                 whileHover="hover"
                 className="px-2 font-bold text-lg"
               >
-                <Link to={'/'}>Logout</Link>
+                <Link to={'/lazer/logout'}>Logout</Link>
               </motion.li>
             </div>
               </>

@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import NavBar from "./components/NavBar";
 import Register from "./components/Register";
 import getUser from "./auth/getUser";
+import Logout from "./components/Logout";
 
 function App() {
   const [user, setUser] = useState({});
@@ -25,7 +26,7 @@ function App() {
         <Route path="/lazer/login" element={<Login />} />
         <Route path="/lazer/products" element={<Items />} />
         <Route path="/lazer/register" element={<Register />} />
-        <Route path="/lazer/logout" />
+        <Route path="/lazer/logout" element={<Logout />} />
       </Routes>
     </StateProvider>
   );
