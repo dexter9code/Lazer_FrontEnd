@@ -9,12 +9,16 @@ const Pagniation = ({ itemsCount, pagesize, onPageChange, currentpage }) => {
   const pages = _.range(1, pageCount + 1);
   return (
     <div>
-      <div className=" ">
+      <div className="text-center py-2">
         <ul className="z-0 inline-flex justify-center rounded-md shadow-sm px-2">
           {pages.map((page) => (
-            <li key={page} className="px-2 cursor-pointer">
+            <li key={page} className="px-2 font-bold cursor-pointer">
               <a
-                className={page === currentpage ? "bg-indigo-300" : "bg-white"}
+                className={
+                  page === currentpage
+                    ? "bg-indigo-300 px-2 rounded-full py-1"
+                    : "bg-white px-2"
+                }
                 onClick={() => onPageChange(page)}
               >
                 {page}
