@@ -23,15 +23,15 @@ function App() {
   return (
     <StateProvider>
       <NavBar user={user} />
-
-      <Routes>
+      <Login />
+      {/* <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/lazer/login" element={user ? <Home /> : <Login />} />
         <Route path="/lazer/products" element={<Items />} />
         <Route path="/lazer/register" element={<Register />} />
         <Route path="/lazer/logout" element={<Logout />} />
         <Route path="/*" element={<Error />} />
-      </Routes>
+      </Routes> */}
     </StateProvider>
   );
 }

@@ -5,6 +5,8 @@ import LoginSvg from './common/LoginSvg'
 import { LoginValidation } from "./../validations/LoginValidation";
 import FormField from "./common/FormField";
 import { apiUrl } from "./../api/apiUrl";
+import loginimage1 from '../assets/svg/loginCenter.svg'
+import loginimage2 from '../assets/svg/realleft.svg'
 
 const Login = () => {
   const handleLogin = async ({ email, password }) => {
@@ -15,8 +17,10 @@ const Login = () => {
     window.location='/'
   };
   return (
-    <div className="w-full h-[90vh] overflow-hidden flex justify-evenly bg-[#f5f5f5]">
-     <div className="invisible lg:visible">
+    <div className="w-full h-[90vh] overflow-hidden flex justify-evenly bg-transparent">
+      <img src={loginimage2} alt="" className="absolute -z-30 left-0 w-[550px]" />
+      <img src={loginimage1} alt="" className="absolute -z-30" />
+     <div className="invisible lg:visible mt-5 rounded-md bg-transparent shadow-lg w-[700px] h-[700px]">
         <LoginSvg />
      </div>
       <div className="flex justify-center  lg:w-[600px] h-[650px]">
