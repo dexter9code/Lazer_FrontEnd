@@ -1,9 +1,9 @@
 import React from "react";
 import { Formik, Form } from "formik";
 
-import loginImage from "../assets/images/loginImage1.jpg";
+import LoginSvg from './common/LoginSvg'
 import { LoginValidation } from "./../validations/LoginValidation";
-import FormField from "./common/FormField2";
+import FormField from "./common/FormField";
 import { apiUrl } from "./../api/apiUrl";
 
 const Login = () => {
@@ -15,21 +15,20 @@ const Login = () => {
     window.location='/'
   };
   return (
-    <div className="w-full h-[90vh] overflow-hidden">
-      <img
-        src={loginImage}
-        className="blur-sm -z-20 h-full w-full absolute object-cover"
-      />
-      <div className="flex justify-center ">
+    <div className="w-full h-[90vh] overflow-hidden flex justify-evenly bg-[#f5f5f5]">
+     <div className="invisible lg:visible">
+        <LoginSvg />
+     </div>
+      <div className="flex justify-center  lg:w-[600px] h-[650px]">
         <Formik
           initialValues={{ email: "", password: "" }}
           validationSchema={LoginValidation}
           onSubmit={(values) => handleLogin(values)}
         >
           {() => (
-            <div className="mt-48 px-10  broder rounded-sm shadow-2xl shadow-blue-700 border-blue-500 ">
+            <div className="mt-10 px-10  rounded-md shadow-lg shadow-blue-700  ">
               <div className="text-center mt-10">
-                <h1 className="text-3xl font-bold capitalize text-white">
+                <h1 className="text-3xl font-bold capitalize ">
                   Welcome To Lazer
                 </h1>
               </div>
