@@ -43,7 +43,7 @@ const NavBar = ({user}) => {
                 whileHover="hover"
                 className="px-2 font-bold capitalize text-lg cursor-pointer "
               >
-                <Link to={'/'}>{user.name}</Link>
+                <Link to={'/lazer/account'}>{user.name}</Link>
               </motion.li>
             </div>
             <div className="flex justify-center items-center p-3">

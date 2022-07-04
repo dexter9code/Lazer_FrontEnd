@@ -11,6 +11,7 @@ import getUser from "./auth/getUser";
 import Logout from "./components/Logout";
 import GoogleIdentity from "./components/Google";
 import Error from "./components/404";
+import Profile from "./components/Profile";
 
 function App() {
   const [user, setUser] = useState({});
@@ -23,15 +24,19 @@ function App() {
   return (
     <StateProvider>
       <NavBar user={user} />
-      <Login />
-      {/* <Routes>
+
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/lazer/login" element={user ? <Home /> : <Login />} />
         <Route path="/lazer/products" element={<Items />} />
         <Route path="/lazer/register" element={<Register />} />
         <Route path="/lazer/logout" element={<Logout />} />
+        <Route
+          path="/lazer/account"
+          element={user ? <Home /> : <Profile user={user} />}
+        />
         <Route path="/*" element={<Error />} />
-      </Routes> */}
+      </Routes>
     </StateProvider>
   );
 }
