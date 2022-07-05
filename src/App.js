@@ -12,6 +12,7 @@ import Logout from "./components/Logout";
 import GoogleIdentity from "./components/Google";
 import Error from "./components/404";
 import Profile from "./components/Profile";
+import Test from "./components/Test";
 
 function App() {
   const [user, setUser] = useState({});
@@ -33,7 +34,7 @@ function App() {
         <Route path="/lazer/logout" element={<Logout />} />
         <Route
           path="/lazer/account"
-          element={user ? <Home /> : <Profile user={user} />}
+          element={user ? <Profile user={user} /> : <Login />}
         />
         <Route path="/*" element={<Error />} />
       </Routes>
