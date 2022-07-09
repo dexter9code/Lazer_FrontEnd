@@ -38,7 +38,7 @@ const NavBar = ({user}) => {
     <div id="nav-container" className="w-full h-[80px]">
       <div
         id="nav-wrapper"
-        className="flex justify-between mx-auto items-center h-full bg-[#f87e9c]"
+        className="flex justify-between mx-auto items-center h-full bg-gradient-to-r from-[#ad80e3] via-[#65e2d8] to-[#ad45f2]"
       >
         {/* left-side */}
         <div className="mx-5 p-2">

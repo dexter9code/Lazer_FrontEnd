@@ -11,12 +11,12 @@ import accfullcircle2 from '../assets/svg/accanotherfullcircle.svg'
 const Profile=({user})=>{
     return(
         <div className=' flex justify-center'>
-            <img src={accleftfull} alt="" className='absolute left-0 bottom-0 -z-40 object-cover w-[900px] h-[680px]' />   
+            {/* <img src={accleftfull} alt="" className='absolute left-0 bottom-0 -z-40 object-cover w-[900px] h-[680px]' />    */}
             <img src={acchalfcircle} alt="" className='absolute right-0 top-[330px] -z-30 object-cover w-[180px] ' />
             <img src={accright} alt="" className='absolute right-0 -z-40 object-cover w-[900px] h-[500px]' />
             <img src={accfullcircle} alt="" className='absolute  -z-40 top-[310px] right-[250px] object-cover p-2 w-[220px] h-[220px]' />
             <img src={accfullcircle2} alt="" className='absolute  -z-40 top-[480px] right-[250px] object-cover  p-2 w-[100px] h-[95px]' />
-            <div className=' border px-40 py-20'>
+            <div className='  px-40 py-20'>
                 <div className='flex justify-center border-b'>
                     <div className='flex justify-center overflow-hidden rounded-full w-[150px] '>
                         <img className='self-center' src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="user" />

@@ -1,11 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext,useMemo, useCallback } from "react";
+import {useSelector,useDispatch} from 'react-redux'
+import {Link} from 'react-router-dom'
+
+import { addingToCart } from "../features/cartSlice";
 import { apiUrl } from "./../api/apiUrl";
 import Pagniation from "./common/Pagination";
 import { pageniate } from "./../utlites/pagniate";
 import Sort from "./common/Sort";
 import SearchBox from "./common/SearchBox";
+import { NavContext } from "./context/NavState";
+import cartimg from '../assets/images/cart.png'
+
+
 
 const Items = () => {
+  const cart=useSelector((state)=>state.cart.cartItem)
+  const dispatch=useDispatch()
+
+  const [order, setOrder] = useState([])
+  const [count,setCount]=useContext(NavContext)
   const [item, setItem] = useState([]);
   const [category, setCategory] = useState([]);
   const [query, setQuery] = useState('')
@@ -44,6 +57,17 @@ const Items = () => {
     setCurrentPage(1)
   }
 
+  // const handlecart=useCallback((item)=>{
+  //   setCount(count=>count+1)
+  //   console.log(item)
+  // },[setCount])
+
+  const handlecart=(item)=>{
+    setCount(count+1)
+    dispatch(addingToCart(item))
+    console.log(cart)
+  }
+
   let filteredItem = item;
   if(query) {
     filteredItem=item.filter(m=>m.name.toLowerCase().match(query.toLowerCase()))
@@ -62,8 +86,12 @@ const Items = () => {
             currentcategory={selectedCategory}
           />
         </div>
-        <div className="py-2">
+        <div className="py-2 flex justify-between">
           <SearchBox query={query} onSearchEvent={handleSearch} />
+          <div className="self-center ml-8">
+            <span className="rounded-full bg-blue-300 -z-10 px-1 lg:absolute top-0 right-[374px]">{count}</span>
+            <Link to={'/lazer/orders'}><img className="w-8" src={cartimg} alt="cart-img" /></Link>
+            </div>
         </div>
       </div>
       <div className="bg-white">
@@ -83,17 +111,17 @@ const Items = () => {
                 </div>
                 <div className="mt-4 flex justify-between">
                   <div>
-                    <h3 className="text-sm text-gray-700">
+                    <h3 className="text-sm text-gray-700 font-semibold">
                       {product.name}
                     </h3>
-                  <h4 className="text-sm font-medium text-gray-900">
-                    Price<p className="inline-block line-through">{product.price}</p>Offer Price ${product.price}
+                  <h4 className="text-base font-medium text-gray-900">
+                    Price<p className="inline-block line-through">{product.price}</p> ${product.price}
                   </h4>
                   </div>
 
-                  <div>
-                    <button>hello</button>
-                    <button>hello</button>
+                  <div className="px-3">
+                    <button className="px-5 py-1 mr-3 capitalize font-semibold border rounded-2xl text-white bg-gradient-to-r from-[#01A7EC] to-[#A929EE]">buy</button>
+                    <button onClick={()=>handlecart(product)} className="px-5 py-1 capitalize font-semibold border rounded-2xl text-white bg-gradient-to-t from-[#C4A8FF] to-[#1A0554]">cart</button>
                   </div>
                 </div>
               </div>

@@ -120,9 +120,9 @@ const Home = () => {
             <img src="https://images.unsplash.com/photo-1650737736263-67daef292284?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzJ8fGRpc2NvdW50fGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
         </SwiperSlide>
         <SwiperSlide className="flex justify-evenly overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1565128260358-318e131efbb6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YnJhbmQlMjBtb2RlbHN8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+            <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWVuJTIwZmFzaGlvbnxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60" alt="" />
             <h1 className="text-center self-center text-lg uppercase py-5 font-bold" >For him </h1>
-            <img src="https://images.unsplash.com/photo-1587928002153-8ff446d44a22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTQwfHxjbG90aGluZ3xlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60" alt="" />
+            <img src="https://images.unsplash.com/photo-1507680434567-5739c80be1ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWVuJTIwZmFzaGlvbnxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60" alt="" />
         </SwiperSlide>
         <SwiperSlide className="flex justify-evenly overflow-hidden">
             <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTJ8fGNsb3RoaW5nfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
