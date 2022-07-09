@@ -1,16 +1,28 @@
-import React from 'react';
+import React from "react";
+import Lottie from "react-lottie";
 
-import errorVideo from  '../assets/video/404.mp4'
+import lost from "../assets/lottie/lost.json";
 
-const Error=()=>{
-    return (
-        <div >
-            <video src={errorVideo} autoPlay loop muted className='blur-sm -z-20 object-cover w-full h-full' />
-            <div className='text-center absolute top-[500px] left-[200px]'>
-                <h1 className='text-white text-5xl capitalize '>oops we lost you !!</h1>
-            </div>
-        </div>
-    )
-}
+const Error = () => {
+  const animationOpitons = {
+    loop: true,
+    autoPlay: true,
+    animationData: lost,
+    renderSettings: {
+      preserveAspectRatio: "XMidYMid Slice",
+    },
+  };
 
-export default Error
+  return (
+    <div>
+      <div className=" lg:w-full h-[700px]">
+        <Lottie options={animationOpitons} />
+      </div>
+      <div className="text-center">
+        <h1 className="text-xl font-bold capitalize">take me back ?</h1>
+      </div>
+    </div>
+  );
+};
+
+export default Error;
