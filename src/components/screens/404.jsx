@@ -1,7 +1,7 @@
 import React from "react";
 import Lottie from "react-lottie";
 
-import lost from "../assets/lottie/lost.json";
+import lost from "../../assets/lottie/lost.json";
 
 const Error = () => {
   const animationOpitons = {

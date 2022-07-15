@@ -2,14 +2,14 @@ import React, { useEffect, useState,useContext,useMemo, useCallback } from "reac
 import {useSelector,useDispatch} from 'react-redux'
 import {Link} from 'react-router-dom'
 
-import { addingToCart } from "../features/cartSlice";
-import { apiUrl } from "./../api/apiUrl";
-import Pagniation from "./common/Pagination";
-import { pageniate } from "./../utlites/pagniate";
-import Sort from "./common/Sort";
-import SearchBox from "./common/SearchBox";
-import { NavContext } from "./context/NavState";
-import cartimg from '../assets/images/cart.png'
+import { addingToCart } from "../../features/cartSlice";
+import { apiUrl } from "./../../api/apiUrl";
+import Pagniation from "./../common/Pagination";
+import { pageniate } from "../../utlites/pagniate";
+import Sort from "../common/Sort";
+import SearchBox from "../common/SearchBox";
+import { NavContext } from "../context/NavState";
+import cartimg from '../../assets/images/cart.png'
 
 
 

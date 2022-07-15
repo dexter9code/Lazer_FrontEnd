@@ -11,10 +11,10 @@ import { AiTwotoneCrown } from "react-icons/ai";
 import { RiSecurePaymentFill } from "react-icons/ri";
 import { SiAuth0 } from "react-icons/si";
 
-import { HomeSvgVariant } from "./animations/HomeSvg";
-import homevideo from "../assets/video/homevideo.mp4";
-import Card from "./common/Card";
-import { NavContext } from "./context/NavState";
+import { HomeSvgVariant } from "../animations/HomeSvg";
+import homevideo from "../../assets/video/homevideo.mp4";
+import Card from "../common/Card";
+import { NavContext } from "../context/NavState";
 
 const Home = () => {
   const [show] = useContext(NavContext);

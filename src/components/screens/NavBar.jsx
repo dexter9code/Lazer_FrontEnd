@@ -12,8 +12,8 @@ import {
   LiVariant,
   LiVariantDiffColor,
   FullLiVariant,
-} from "./animations/SpringHover";
-import { NavContext } from "./context/NavState";
+} from "../animations/SpringHover";
+import { NavContext } from "../context/NavState";
 
 
 const userNavigation=[

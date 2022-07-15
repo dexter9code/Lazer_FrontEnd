@@ -1,11 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 
-import {couponImg,favImg,logoutImg,orderImg,walletImg} from '../assets/icons/index'
+import {couponImg,favImg,logoutImg,orderImg,walletImg} from '../../assets/icons/index'
 
-import ProfileCard from './common/ProfileField';
+import ProfileCard from '../common/ProfileField';
 
-import {accfullcircle,accfullcircle2,acchalfcircle,accright} from '../assets/svg/svgIndex'
+import {accfullcircle,accfullcircle2,acchalfcircle,accright} from '../../assets/svg/svgIndex'
 
 
 

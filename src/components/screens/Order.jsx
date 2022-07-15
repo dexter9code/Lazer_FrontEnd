@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux/es/exports";
 
-import icon from "../assets/icons/paytm.png";
+import icon from "../../assets/icons/paytm.png";
 
 const initialValue = 0;
 const Tax = 8.5;
