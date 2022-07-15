@@ -1,27 +1,30 @@
 import React, { useState } from "react";
-import { useDispatch,useSelector } from "react-redux/es/exports";
+import { useSelector } from "react-redux/es/exports";
 
-import icon from '../assets/icons/paytm.png'
+import icon from "../assets/icons/paytm.png";
 
-
-const initialValue=0
+const initialValue = 0;
 const Tax = 8.5;
 
 const Order = () => {
-    const cart=useSelector((state)=>state.cart.cartItem)
-    const [items,setItems]=useState(cart)
-    const [total, setTotal] = useState(items.map(m=>m.price + Math.ceil(m.price*(Tax/100))))
-    console.log(total)
+  const cart = useSelector((state) => state.cart.cartItem);
+  const [items, setItems] = useState(cart);
+  const [total, setTotal] = useState(
+    items.map((m) => m.price + Math.ceil(m.price * (Tax / 100)))
+  );
 
   const handleRemove = (item) => {
-    const updatedData=items.filter(m=>m.id!==item.id)
-    setItems(updatedData)
-    setTotal(updatedData.map(m=>m.price  + Math.ceil(m.price*(Tax/100))))
+    const updatedData = items.filter((m) => m._id !== item._id);
+    setItems(updatedData);
+    setTotal(
+      updatedData.map((m) => m.price + Math.ceil(m.price * (Tax / 100)))
+    );
     console.log(item);
   };
-  const netTotal= total.reduce(
-    (previousValue, currentValue) => previousValue + currentValue,initialValue
-  )
+  const netTotal = total.reduce(
+    (previousValue, currentValue) => previousValue + currentValue,
+    initialValue
+  );
 
   return (
     <div className="flex justify-around">
@@ -69,28 +72,42 @@ const Order = () => {
               <tbody>
                 <tr className="text-center border-b" key={item.id}>
                   <td className="p-3 ">{item.name}</td>
-                  <td >{item.price}</td>
+                  <td>{item.price}</td>
                   <td>{Tax}%</td>
                   <td className="px-3 text-center">
-                   $ {[item.price + Math.ceil(item.price * (Tax / 100))]}{" "}
+                    $ {[item.price + Math.ceil(item.price * (Tax / 100))]}{" "}
                   </td>
                 </tr>
               </tbody>
             </>
           ))}
         </table>
-            <div className="flex justify-around mt-5">
-                <h1 className="md:text-xl font-bold capitalize px-5 py-3">subtotal</h1>
-                <h1 className="px-5 py-3 ml-2">$ {netTotal}</h1>
-            </div>
-            <div className="text-center mt-5">
-                <button className=" px-5 py-2 border rounded-md text-base font-bold text-white bg-gradient-to-r from-indigo-400 to-red-500 lg:w-[300px]  ">Pay Now</button>
-            </div>
-            <h2 className="text-center mt-3 italic text-sm font-semibold capitalize">or Pay With</h2>
-            <div className="mt-5 flex justify-center py-2">
-                <img className="w-[55px] hover:opacity-80"  src="https://cdn-icons-png.flaticon.com/512/6124/6124998.png" alt="google_pay" />
-                <img className="w-[55px] ml-10  hover:opacity-80" src={icon} alt="paytm_img" />
-            </div>
+        <div className="flex justify-around mt-5">
+          <h1 className="md:text-xl font-bold capitalize px-5 py-3">
+            subtotal
+          </h1>
+          <h1 className="px-5 py-3 ml-2">$ {netTotal}</h1>
+        </div>
+        <div className="text-center mt-5">
+          <button className=" px-5 py-2 border rounded-md text-base font-bold text-white bg-gradient-to-r from-indigo-400 to-red-500 lg:w-[300px]  ">
+            Pay Now
+          </button>
+        </div>
+        <h2 className="text-center mt-3 italic text-sm font-semibold capitalize">
+          or Pay With
+        </h2>
+        <div className="mt-5 flex justify-center py-2">
+          <img
+            className="w-[55px] hover:opacity-80"
+            src="https://cdn-icons-png.flaticon.com/512/6124/6124998.png"
+            alt="google_pay"
+          />
+          <img
+            className="w-[55px] ml-10  hover:opacity-80"
+            src={icon}
+            alt="paytm_img"
+          />
+        </div>
       </div>
     </div>
   );

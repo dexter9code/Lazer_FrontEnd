@@ -7,20 +7,18 @@ import FormField2 from "./common/FormField2";
 import loginImage from "../assets/images/loginImage1.jpg";
 import { apiUrl } from "../api/apiUrl";
 import { Link } from 'react-router-dom';
+import { useAddUserData } from './../hooks/RegisterData';
 
 const Register = () => {
   const [serverError, setServerError] = useState(false);
+  const {mutate,error,data}= useAddUserData()
+
   const handleRegister = async ({ name, email, password }) => {
     const userdata = { name, email, password };
-    const res = await apiUrl.post("/users", userdata);
-    if (res==='OK') {
-      setServerError(true)
-      console.log(serverError)
-    }
-    setServerError(false);
-    console.log(serverError);
-    console.log(res.data);
-    localStorage.setItem("token", res.headers["x-auth-token"]);
+    mutate(userdata)
+    if(error) return setServerError(true)
+    setServerError(false)
+    localStorage.setItem("token", data.headers ["x-auth-token"]);
     window.location='/'
   };
 
@@ -68,15 +66,12 @@ const Register = () => {
         >
           {() => (
             <div>
-              <div className="text-3xl font-bold text-center mb-5 p-5 text-white">
+              <div className="text-3xl uppercase font-bold text-center mb-5 p-5 text-white">
                 <h1>Register</h1>
               </div>
               {serverError === true ? (
-                <p className="text-center">Email already Exists</p>
-              ) : (
-                <p className="text-center">test</p>
-              )}
-              {console.log(serverError)}
+                <p className="text-center text-white">Email already Exists</p>
+              ) : null}
               <div className=" ">
                 <Form>
                   <FormField2 name={"name"} title={"Name"} />
@@ -92,7 +87,7 @@ const Register = () => {
                 <div className="mb-5 ml-6 px-3 py-2 text-center text-white">
                   <p className="text-sm font-medium">
                     Already a User?
-                    <span className="italic cursor-pointer"><Link to={'/Login'}>Login</Link></span>
+                    <span className="italic cursor-pointer"><Link to={'/lazer/Login'}>Login</Link></span>
                   </p>
                 </div>
               </div>

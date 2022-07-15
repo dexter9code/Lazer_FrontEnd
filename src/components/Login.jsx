@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Formik, Form } from "formik";
 
 import LoginSvg from './common/LoginSvg'
@@ -7,13 +7,19 @@ import FormField from "./common/FormField";
 import { apiUrl } from "./../api/apiUrl";
 import loginimage1 from '../assets/svg/loginCenter.svg'
 import loginimage2 from '../assets/svg/realleft.svg'
+import { useValidateUser } from "../hooks/LoginData";
+
 
 const Login = () => {
+  const{data,error,mutate}= useValidateUser()
+  const [loginError, setLoginError] = useState(false)
+
   const handleLogin = async ({ email, password }) => {
     const userData = { email, password };
-    const res = await apiUrl.post("/auth", userData);
-    localStorage.setItem("token", res.data);
-    console.log(res.data);
+    mutate(userData)
+    if(error) return setLoginError(true)
+    setLoginError(false)
+    localStorage.setItem("token", data.data);
     window.location='/'
   };
   return (
@@ -33,8 +39,9 @@ const Login = () => {
             <div className="mt-10 px-10  rounded-md shadow-lg shadow-blue-700  ">
               <div className="text-center mt-10">
                 <h1 className="text-3xl font-bold capitalize ">
-                  Welcome To Lazer
+                  Welcome Back to Lazer
                 </h1>
+                {loginError && <h1 className="text-base text-red-600 font-semibold italic mt-5 capitalize">Invalid email or Password</h1>}
               </div>
               <div className=" p-5">
                 <Form>

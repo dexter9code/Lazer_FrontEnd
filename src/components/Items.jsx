@@ -13,7 +13,7 @@ import cartimg from '../assets/images/cart.png'
 
 
 
-const Items = () => {
+const Items = ({user}) => {
   const cart=useSelector((state)=>state.cart.cartItem)
   const dispatch=useDispatch()
 
@@ -121,7 +121,7 @@ const Items = () => {
 
                   <div className="px-3">
                     <button className="px-5 py-1 mr-3 capitalize font-semibold border rounded-2xl text-white bg-gradient-to-r from-[#01A7EC] to-[#A929EE]">buy</button>
-                    <button onClick={()=>handlecart(product)} className="px-5 py-1 capitalize font-semibold border rounded-2xl text-white bg-gradient-to-t from-[#C4A8FF] to-[#1A0554]">cart</button>
+                    {user ? <button onClick={()=>handlecart(product)} className="px-5 py-1 capitalize font-semibold border rounded-2xl text-white bg-gradient-to-t from-[#C4A8FF] to-[#1A0554]">cart</button> : <button className="px-5 py-1 capitalize font-semibold border rounded-2xl text-white bg-gradient-to-t from-[#C4A8FF] to-[#1A0554]"><Link to='/lazer/login'>Cart</Link></button>}
                   </div>
                 </div>
               </div>
