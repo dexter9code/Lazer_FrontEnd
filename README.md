@@ -12,7 +12,8 @@ https://github.com/dexter9code/Lazer_Backend
 install `npm i` and then `nodemon app` or `npm start` to start server
 
 # ScreenShot
-<img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="doomdexter" height="30" width="40" />
+<img align="center" src="https://github.com/dexter9code/Lazer_FrontEnd/blob/images/Screenshot%202022-07-15%20093835.png" alt="lazerRegister" height="400" width="600" />
+<img align="center" src="https://github.com/dexter9code/Lazer_FrontEnd/blob/images/homeScreen.png" alt="lazerHome" height="400" width="600" />
 
 
 # Caution
