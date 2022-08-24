@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { QueryClientProvider, QueryClient } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 import { StateProvider } from "./components/context/NavState";
 import Home from "./components/screens/Home";
@@ -47,6 +48,7 @@ function App() {
           <Route path="/*" element={<Error />} />
         </Routes>
       </StateProvider>
+      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
     </QueryClientProvider>
   );
 }

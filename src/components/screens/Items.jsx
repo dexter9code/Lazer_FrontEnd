@@ -41,6 +41,7 @@ const Items = ({user}) => {
     callingApi();
     callingCategories();
   }, []);
+
   
   const handleChangePage = (page) => {
     setCurrentPage(page);
